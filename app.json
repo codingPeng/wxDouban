@@ -1,11 +1,11 @@
 {
     "pages": 
     [
-        "pages/video/index",
-        "pages/videoDetail/index",
         "pages/home/index",
         "pages/homeDetail/index",
-        "pages/search/index"
+        "pages/search/index",
+        "pages/video/index",
+        "pages/videoDetail/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -19,12 +19,6 @@
         "backgroundColor": "#fcfcfc",
         "list": [
             {
-            "iconPath": "static/images/person.png",
-            "selectedIconPath": "static/images/person-g.png",
-            "pagePath": "pages/video/index",
-            "text": "视频"
-            },
-            {
             "iconPath": "static/images/home.png",
             "selectedIconPath": "static/images/home-g.png",
             "pagePath": "pages/home/index",
@@ -35,6 +29,12 @@
             "selectedIconPath": "static/images/home-g.png",
             "pagePath": "pages/search/index",
             "text": "搜索"
+            },
+            {
+            "iconPath": "static/images/person.png",
+            "selectedIconPath": "static/images/person-g.png",
+            "pagePath": "pages/video/index",
+            "text": "视频"
             }
         ]
     }
