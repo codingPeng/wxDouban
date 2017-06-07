@@ -1,0 +1,12 @@
+<scroll-view scroll-y="true" class="scroll" bindscrolltolower="renderVideo" style="height: {{winHeight}}px">    
+  <view class="flex play-wrapper">
+    <video src="{{playUrl}}"></video>
+  </view>
+  <!-- 评论区 -->
+  <view>
+
+  </view>
+  <view wx:if="{{loading}}" class="weui-loading-wrap">
+    <view class="weui-loading"></view>
+  </view>
+</scroll-view> 

@@ -1,0 +1,46 @@
+<!-- home详情页面 -->
+
+<loading hidden = "{{!loading}}">加载中...</loading>
+
+<view class="homeDetail">
+    <image class="detail-img" src="{{rData.images.medium}}"></image>
+    <view class="flex discribe">
+        <!-- 标题 -->
+        <view class="flex left">
+            <view class="left-title">{{rData.title}}({{rData.countries}})</view>
+            <view class="left-content flex">{{rData.year}}<view class="left-genres" wx:for="{{rData.genres}}" wx:key="{{rData.id}}">/{{item}}</view></view>
+            <view class="left-content">原名:{{rData.original_title}}</view>
+        </view>
+        <!-- 评分 -->
+        <view class="flex right">
+            <view class="right-title">豆瓣评分</view>
+            <view class="score">{{rData.rating.average}}</view>
+            <view class="flex star">
+                <view class="stars-on" wx:for="{{(rData.rating.stars-rData.rating.stars % 10) / 10}}" wx:key="{{rData.id}}"></view>
+                <view class="stars-half" wx-if="{{rData.rating.stars % 10 !== 0 && rData.rating.stars !== '00'}}" wx:key="{{rData.id}}"></view>
+                <view class="stars-off" wx:for="{{(50-rData.rating.stars-rData.rating.stars % 10) / 10}}" wx:key="{{rData.id}}"></view>
+            </view>
+            <view class="rating-count">{{rData.ratings_count}}人</view>
+        </view>
+    </view>
+    <!-- 是否观看 人数 -->
+    <view class="flex watch-wrapper">
+        <view class='wish-count'>想看({{rData.wish_count}})</view>
+        <view class='collect-count'>看过({{rData.collect_count}})</view>
+    </view>
+    <!-- 简介 -->
+    <view class="flex summary-wrapper">
+        <view class="summary-title">简介</view>
+        <view class="summary-content">{{rData.summary}}</view>
+    </view>
+    <!-- 影人 -->
+    <view class="flex casts">
+        <view class="casts-title">影人</view>
+        <scroll-view class="flex scroll-view" scroll-x style>
+            <view class="casts-wrapper" wx:for="{{rData.casts}}" wx:key="{{rData.id}}">
+                <image class="item-img" src="{{item.avatars.small}}"></image>
+                <view class="cast-name">{{item.name}}</view>
+            </view>
+        </scroll-view>
+    </view> 
+</view>

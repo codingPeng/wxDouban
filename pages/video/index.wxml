@@ -1,0 +1,14 @@
+<scroll-view scroll-y="true" class="scroll" bindscrolltolower="renderVideo" style="height: {{winHeight}}px">    
+    <block wx:for="{{videoList}}" wx:key="{{item.vid}}">
+      <navigator url="/pages/videoDetail/index?id={{item.mp4_url}}">
+        <view  class="flex item-wrapper">
+            <image src="{{item.cover}}" class="item-img"></image>
+            <image src="../../images/play.png" class="item-img-play"></image>
+            <view class="item-title">{{item.title}}</view>
+        </view>
+      </navigator>
+    </block>
+  <view wx:if="{{!loading}}" class="weui-loading-wrap">
+    <view class="weui-loading"></view>
+  </view>
+</scroll-view> 

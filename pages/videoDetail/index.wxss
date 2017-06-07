@@ -1,0 +1,6 @@
+.play-wrapper {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin: 20rpx 0;
+}

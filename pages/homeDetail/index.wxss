@@ -1,0 +1,132 @@
+
+.homeDetail {
+    background-color: #faf6f3;
+}
+
+.detail-img {
+    display: flex;
+    text-align: center;
+    margin: 10rpx auto;
+
+}
+
+.discribe {
+    flex-direction: row;
+}
+
+.right {
+    width: 30%;
+    flex-direction: column;   
+    text-align: center;
+    margin: 20rpx;
+}
+
+.left {
+    flex: 1;
+    flex-direction: column;
+    margin: 20rpx;
+}
+.star {
+    margin-left: 40rpx;
+}
+
+.left-title {
+    margin: 6rpx 60rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: black;
+}
+
+
+.left-content {
+    flex-direction: row;
+    margin-left: 60rpx;
+    margin-right: 20rpx;
+    font-size: 24rpx;
+    color: gray;
+}
+
+.right {
+    background-color: white;
+    margin-right: 20rpx;
+}
+
+.right-title {
+    color: gray;
+    font-size: 24rpx;
+}
+
+.score {
+    font-size: 40rpx;
+    font-weight: bold;
+    color: black;    
+}
+
+.rating-count {
+    font-size: 22rpx;
+    color: gray;
+    margin: 4rpx 0;
+}
+
+.watch-wrapper {
+    flex-direction: row;
+}
+
+.wish-count, .collect-count {
+    flex: 1;
+    margin: 20rpx 0;
+    text-align: center;
+    font-size: 34rpx;
+    color: orange;
+    border: 2rpx solid orange;
+    margin: 0 40rpx;
+    padding: 10rpx 0;
+    border-radius: 10rpx;
+}
+
+.summary-wrapper {
+    flex-direction: column;
+    margin: 10rpx 60rpx;
+}
+
+.summary-title {
+    font-size: 22rpx;
+    color: gray;
+    margin: 16rpx 0;
+}
+
+.summary-content {
+    font-size: 26rpx;
+    color: black;
+}
+
+.casts {
+    flex-direction: column;
+    margin: 0 20rpx;
+}
+
+.casts-title {
+    font-size: 22rpx;
+    color: gray;
+    margin: 16rpx 0;
+    margin-left: 40rpx;
+}
+
+.scroll-view {
+    white-space: nowrap;
+    margin-bottom: 40rpx;
+}
+
+.casts-wrapper {
+    display: inline-block;
+    width: 70px;
+    margin: 0 8px;
+}
+
+.cast-name {
+    text-align: center;
+    font-size: 22rpx;
+    color: gray;
+    white-space: pre-wrap;
+}
+

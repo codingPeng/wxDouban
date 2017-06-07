@@ -1,0 +1,35 @@
+.item-wrapper {
+    flex-direction: column;
+    margin-top: 20rpx;
+    justity-content: center;
+    align-items: center;
+    item-content: center;
+}
+
+.item-img {
+    position: relative;
+    width: 96%;
+    height: 170px;
+}
+
+.item-img-play {
+    display: inline-flex;
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    margin-top: 65px;
+}
+
+.item-title {
+    display: inline-flex;
+    position: absolute;
+    width: 90%;
+    height: 44rpx;
+    line-height: 44rpx;
+    font-size: 24rpx;
+    color: white;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 158px;
+    padding: 0 20rpx;
+}

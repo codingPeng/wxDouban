@@ -1,0 +1,49 @@
+<!-- home页面 -->
+<view>
+    <scroll-view class="tab" scroll-x>
+        <view class="tab-item {{tab === item.id ? 'tab-item-active' : ''}}" wx:for="{{tabs}}" bindtap="tabTap" wx:key="{{item.id}}" 
+        id="{{item.id}}" hover-class="tab-item-hover">{{item.label}}</view>
+    </scroll-view>
+</view>
+<swiper current="{{tab}}" bindchange="durationChange" class="home-swiper" style="height: {{swiperHeight-40}}px">
+  <swiper-item wx:for="{{tabs}}" wx:key="{{item.id}}">
+    <view wx:for="{{renderData}}" wx:key="{{item.id}}">
+      <!-- 前三栏数据 -->
+      <navigator  class="flex item-wrapper" wx-if="{{!item.subject}}" url="/pages/homeDetail/index?id={{item.id}}">
+        <image class="item-img" src="{{item.images.small}}"></image>
+        <view class="right-wrapper">
+          <view class="title">{{item.title}}({{item.year}})</view>
+          <view class="flex category"><view class="cate-title">类型:</view>{{item.genres}}</view>
+          <view class="flex">
+            <view class="stars-on" wx:for="{{(item.rating.stars-item.rating.stars % 10) / 10}}" wx:key="{{item.id}}"></view>
+            <view class="stars-half" wx-if="{{item.rating.stars % 10 !== 0 && item.rating.stars !== '00'}}" wx:key="{{item.id}}"></view>
+            <view class="stars-off" wx:for="{{(50-item.rating.stars-item.rating.stars % 10) / 10}}" wx:key="{{item.id}}"></view>
+            <view class="average">{{item.rating.average}}</view>
+          </view>
+        </view>
+      </navigator>
+      <!-- 北美票房数据 -->
+      <navigator  class="flex item-wrapper" wx-if="{{item.subject}}" url="/pages/homeDetail/index?id={{item.id}}">
+        <image class="item-img" src="{{item.subject.images.small}}"></image>
+        <view class="right-wrapper">
+          <view class="title">{{item.subject.title}}({{item.subject.year}})</view>
+          <view class="flex category"><view class="cate-title">类型:</view>{{item.subject.genres}}</view>
+          <view class="flex">
+            <view class="stars-on" wx:for="{{(item.subject.rating.stars-item.subject.rating.stars % 10) / 10}}" wx:key="{{item.id}}"></view>
+            <view class="stars-half" wx-if="{{item.subject.rating.stars % 10 !== 0 && item.subject.rating.stars !== '00'}}" wx:key="{{item.id}}"></view>
+            <view class="stars-off" wx:for="{{(50-item.subject.rating.stars-item.subject.rating.stars % 10) / 10}}" wx:key="{{item.id}}"></view>
+            <view class="average">{{item.subject.rating.average}}</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </swiper-item>  
+  <view wx:if="{{loading}}" class="weui-loading-wrap">
+    <view class="weui-loading"></view>
+  </view>
+  <view class="button-wrapper" style="display: {{isDisplay}}"> 
+    <button  type="default" size="mini" loading="{{loading}}" disabled="{{disabled}}" bindtap="setLoading" class="btn"> 
+    {{loadText}} 
+    </button> 
+  </view>
+</swiper>
